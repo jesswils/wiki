@@ -9,11 +9,15 @@ const Tiptap = () => {
 		editorProps: {
 			attributes: {
 				class:
-					'prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 border border-sky-500 rounded-md size-96 focus:border-0 focus:shadow-cyan-500/50 focus:shadow-lg',
+					'm-5 border-2 border-sky-500 rounded-md size-96 focus:border-0 focus:shadow-cyan-500/50 focus:shadow-lg p-1',
 			},
 		},
 		content: '<p>Hello World! 🌎️</p>',
 		autofocus: true,
+		// onUpdate: ({ editor }) => {
+		// 	const html = editor.getHTML();
+
+		// },
 	});
 
 	return <EditorContent editor={editor} />;
