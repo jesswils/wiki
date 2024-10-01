@@ -2,8 +2,11 @@
 
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import { useState } from 'react';
 
 const Tiptap = () => {
+	const [editorContent, setEditorContent] = useState<string>('');
+
 	const editor = useEditor({
 		extensions: [StarterKit],
 		editorProps: {
@@ -14,13 +17,13 @@ const Tiptap = () => {
 		},
 		content: '<p>Hello World! 🌎️</p>',
 		autofocus: true,
-		// onUpdate: ({ editor }) => {
-		// 	const html = editor.getHTML();
-
-		// },
+		onUpdate: ({ editor }) => {
+			const text = editor.getText();
+			setEditorContent(text);
+		},
 	});
 
-	return <EditorContent editor={editor} />;
+	return <EditorContent editor={editor} value={editorContent} />;
 };
 
 export default Tiptap;
