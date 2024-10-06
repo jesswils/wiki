@@ -8,7 +8,7 @@ const Document = () => {
 
 	return (
 		<div>
-			<div className='flex space-x-6'>
+			<div className='flex space-x-12'>
 				<label className='text-base font-bold text-muted-foreground'>
 					Title
 				</label>
