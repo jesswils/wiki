@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import ShowNote from './ShowNote';
 import Tiptap from './TipTap';
