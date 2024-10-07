@@ -17,15 +17,11 @@ const Editor = () => {
 		<>
 			<Tiptap onEditorContentSave={handleEditorContentSave} />
 			<hr className='my-8 h-0.5 border-t-0 bg-neutral-100 opacity-100' />
-			<div className='flex'>
-				<div>
-					{htmlContent ? (
-						<ShowNote content={htmlContent} />
-					) : (
-						<h2 className='text-lg text-center mt-0'>You have no notes yet</h2>
-					)}
-				</div>
-			</div>
+			{htmlContent ? (
+				<ShowNote content={htmlContent} />
+			) : (
+				<h2 className='text-lg text-center mt-0'>You have no notes yet</h2>
+			)}
 		</>
 	);
 };
