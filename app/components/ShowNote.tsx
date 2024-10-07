@@ -1,4 +1,5 @@
-import { parse } from 'node-html-parser';
+import parse from 'html-react-parser';
+import DOMPurify from "isomorphic-dompurify";
 
 interface ShowNoteProps {
 	content: string | undefined;
@@ -7,10 +8,9 @@ interface ShowNoteProps {
 const ShowNote = ({ content }: ShowNoteProps) => {
 	if(!content) return null;
 
-	const parsedContent = parse(content);
-	console.log(parsedContent)
-
-	return <div dangerouslySetInnerHTML={{ __html: parsedContent }} />
+	const santisedContent = DOMPurify.sanitize(content);
+	const parsedContent = parse(santisedContent);
+	return <div>{parsedContent}</div>
 };
 
 export default ShowNote;
