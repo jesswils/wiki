@@ -11,6 +11,7 @@ const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
 
 	const editor = useEditor({
 		extensions: [StarterKit],
+    immediatelyRender: false,
 		editorProps: {
 			attributes: {
 				class:
