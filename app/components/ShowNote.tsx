@@ -1,5 +1,5 @@
 import parse from 'html-react-parser';
-import DOMPurify from "isomorphic-dompurify";
+import DOMPurify from 'isomorphic-dompurify';
 import SaveNote from './SaveNote';
 
 interface ShowNoteProps {
@@ -7,7 +7,7 @@ interface ShowNoteProps {
 }
 
 const ShowNote = ({ content }: ShowNoteProps) => {
-	if(!content) return null;
+	if (!content) return null;
 
 	const santisedContent = DOMPurify.sanitize(content);
 	const parsedContent = parse(santisedContent);
