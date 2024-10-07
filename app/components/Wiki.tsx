@@ -1,5 +1,3 @@
-'use client';
-
 import Editor from './Editor';
 
 const Wiki = () => {
