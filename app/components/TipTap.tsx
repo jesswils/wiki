@@ -10,7 +10,7 @@ interface TiptapProps {
 const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
 	const editor = useEditor({
 		extensions: [StarterKit],
-    immediatelyRender: false,
+		immediatelyRender: false,
 		editorProps: {
 			attributes: {
 				class:
@@ -28,79 +28,103 @@ const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
 
 	return (
 		<>
-    	<div className='w-1/2'>
-			<button
-				onClick={() => editor.chain().focus().toggleBold().run()}
-				disabled={!editor.can().chain().focus().toggleBold().run()}
-				className={editor.isActive('bold') ? 'is-active' : ''}
-        id='button-group'
-			>
-				Bold
-			</button>
-			<button
-          onClick={() => editor.chain().focus().toggleItalic().run()}
-          className={editor.isActive('italic') ? 'is-active' : ''}
-          id='button-group'
-        >
-          Italic
-        </button>
-		<button
-          onClick={() => editor.chain().focus().toggleStrike().run()}
-          className={editor.isActive('strike') ? 'is-active' : ''}
-          id='button-group'
-        >
-          Strikethrough
-        </button>
-		<button
-          onClick={() => editor.chain().focus().toggleCode().run()}
-          className={editor.isActive('code') ? 'is-active' : ''}
-          id='button-group'
-        >
-          Code
-        </button>
-		<button
-          onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-          className={editor.isActive('heading', { level: 1 }) ? 'is-active' : ''}
-          id='button-group'
-        >
-          H1
-        </button>
-        <button
-          onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-          className={editor.isActive('heading', { level: 2 }) ? 'is-active' : ''}
-          id='button-group'
-        >
-          H2
-        </button>
-        <button
-          onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-          className={editor.isActive('heading', { level: 3 }) ? 'is-active' : ''}
-          id='button-group'
-        >
-          H3
-        </button>
-        <button
-          onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
-          className={editor.isActive('heading', { level: 4 }) ? 'is-active' : ''}
-          id='button-group'
-        >
-          H4
-        </button>
-        <button
-          onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
-          className={editor.isActive('heading', { level: 5 }) ? 'is-active' : ''}
-          id='button-group'
-        >
-          H5
-        </button>
-        <button
-          onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
-          className={editor.isActive('heading', { level: 6 }) ? 'is-active' : ''}
-          id='button-group'
-        >
-          H6
-        </button>
-		{/* <button
+			<div className='w-1/2'>
+				<button
+					onClick={() => editor.chain().focus().toggleBold().run()}
+					disabled={!editor.can().chain().focus().toggleBold().run()}
+					className={editor.isActive('bold') ? 'is-active' : ''}
+					id='button-group'
+				>
+					Bold
+				</button>
+				<button
+					onClick={() => editor.chain().focus().toggleItalic().run()}
+					className={editor.isActive('italic') ? 'is-active' : ''}
+					id='button-group'
+				>
+					Italic
+				</button>
+				<button
+					onClick={() => editor.chain().focus().toggleStrike().run()}
+					className={editor.isActive('strike') ? 'is-active' : ''}
+					id='button-group'
+				>
+					Strikethrough
+				</button>
+				<button
+					onClick={() => editor.chain().focus().toggleCode().run()}
+					className={editor.isActive('code') ? 'is-active' : ''}
+					id='button-group'
+				>
+					Code
+				</button>
+				<button
+					onClick={() =>
+						editor.chain().focus().toggleHeading({ level: 1 }).run()
+					}
+					className={
+						editor.isActive('heading', { level: 1 }) ? 'is-active' : ''
+					}
+					id='button-group'
+				>
+					H1
+				</button>
+				<button
+					onClick={() =>
+						editor.chain().focus().toggleHeading({ level: 2 }).run()
+					}
+					className={
+						editor.isActive('heading', { level: 2 }) ? 'is-active' : ''
+					}
+					id='button-group'
+				>
+					H2
+				</button>
+				<button
+					onClick={() =>
+						editor.chain().focus().toggleHeading({ level: 3 }).run()
+					}
+					className={
+						editor.isActive('heading', { level: 3 }) ? 'is-active' : ''
+					}
+					id='button-group'
+				>
+					H3
+				</button>
+				<button
+					onClick={() =>
+						editor.chain().focus().toggleHeading({ level: 4 }).run()
+					}
+					className={
+						editor.isActive('heading', { level: 4 }) ? 'is-active' : ''
+					}
+					id='button-group'
+				>
+					H4
+				</button>
+				<button
+					onClick={() =>
+						editor.chain().focus().toggleHeading({ level: 5 }).run()
+					}
+					className={
+						editor.isActive('heading', { level: 5 }) ? 'is-active' : ''
+					}
+					id='button-group'
+				>
+					H5
+				</button>
+				<button
+					onClick={() =>
+						editor.chain().focus().toggleHeading({ level: 6 }).run()
+					}
+					className={
+						editor.isActive('heading', { level: 6 }) ? 'is-active' : ''
+					}
+					id='button-group'
+				>
+					H6
+				</button>
+				{/* <button
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={editor.isActive('bulletList') ? 'is-active' : ''}
           id='button-group'
@@ -114,49 +138,57 @@ const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
         >
           Ordered list
         </button> */}
-        {/* these are commented out as I wasn't happy with the formatting */}
-        <button
-          onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-          className={editor.isActive('codeBlock') ? 'is-active' : ''}
-          id='button-group'
-        >
-          Code block
-        </button>
-        <button
-          onClick={() => editor.chain().focus().toggleBlockquote().run()}
-          className={editor.isActive('blockquote') ? 'is-active' : ''}
-          id='button-group'
-        >
-          Blockquote
-        </button>
-        <button onClick={() => editor.chain().focus().setHorizontalRule().run()}
-          id='button-group'>
-          Horizontal rule
-        </button>
-        <button onClick={() => editor.chain().focus().setHardBreak().run()}
-          id='button-group'>
-          Hard break
-        </button>
-        <button onClick={() => editor.chain().focus().undo().run()}
-          id='button-group'>
-          Undo
-        </button>
-        <button onClick={() => editor.chain().focus().redo().run()}
-          id='button-group'>
-          Redo
-        </button>
-      
-				<EditorContent editor={editor} />
-       
-        <div className='flex justify-center items-center'>
+				{/* these are commented out as I wasn't happy with the formatting style */}
 				<button
-					className='w-96 py-2.5 px-5 text-center mr-16 my-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border hover:bg-gray-100 hover:text-sky-500 focus:shadow-cyan-500/50'
-					onClick={handleEditorContent}
+					onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+					className={editor.isActive('codeBlock') ? 'is-active' : ''}
+					id='button-group'
 				>
-					Save{' '}
+					Code block
 				</button>
-        </div>
-      </div>
+				<button
+					onClick={() => editor.chain().focus().toggleBlockquote().run()}
+					className={editor.isActive('blockquote') ? 'is-active' : ''}
+					id='button-group'
+				>
+					Blockquote
+				</button>
+				{/* not particularly happy with the blockquote either */}
+				<button
+					onClick={() => editor.chain().focus().setHorizontalRule().run()}
+					id='button-group'
+				>
+					Horizontal rule
+				</button>
+				<button
+					onClick={() => editor.chain().focus().setHardBreak().run()}
+					id='button-group'
+				>
+					Hard break
+				</button>
+				<button
+					onClick={() => editor.chain().focus().undo().run()}
+					id='button-group'
+				>
+					Undo
+				</button>
+				<button
+					onClick={() => editor.chain().focus().redo().run()}
+					id='button-group'
+				>
+					Redo
+				</button>
+
+				<EditorContent editor={editor} />
+				<div className='flex justify-center items-center'>
+					<button
+						className='w-96 py-2.5 px-5 text-center mr-16 my-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border hover:bg-gray-100 hover:text-sky-500 focus:shadow-cyan-500/50'
+						onClick={handleEditorContent}
+					>
+						Save{' '}
+					</button>
+				</div>
+			</div>
 		</>
 	);
 };
