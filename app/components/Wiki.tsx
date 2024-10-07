@@ -25,7 +25,6 @@ const Document = () => {
 				/> */}
 			</div>
 			<div className='flex'>
-				<p className='font-bold mt-5'>Content</p>
 				<NewNote />
 			</div>
 			{/* conditionally render */}
