@@ -25,7 +25,6 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<script src="https://cdn.tailwindcss.com?plugins=typography" defer></script>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r min-h-screen from-pink-200 to-teal-100`}
 			>
