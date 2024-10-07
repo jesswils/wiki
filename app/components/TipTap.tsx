@@ -14,7 +14,7 @@ const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
 		editorProps: {
 			attributes: {
 				class:
-					'bg-white m-5 border border-sky-500 rounded-md size-96 focus:shadow-sky-200/50 focus:shadow-lg p-1 outline-none',
+					'bg-white ml-1 my-3 border border-sky-500 rounded-md min-h-96 w-[40rem] size-fit focus:shadow-sky-200/50 focus:shadow-lg p-1 outline-none',
 			},
 		},
 	});
@@ -100,7 +100,7 @@ const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
         >
           H6
         </button>
-		<button
+		{/* <button
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={editor.isActive('bulletList') ? 'is-active' : ''}
           id='button-group'
@@ -113,7 +113,7 @@ const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
           id='button-group'
         >
           Ordered list
-        </button>
+        </button> */}
         <button
           onClick={() => editor.chain().focus().toggleCodeBlock().run()}
           className={editor.isActive('codeBlock') ? 'is-active' : ''}
@@ -144,15 +144,17 @@ const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
           id='button-group'>
           Redo
         </button>
-        <div className='flex'>
+      
 				<EditorContent editor={editor} />
-        </div>
+       
+        <div className='flex justify-center items-center'>
 				<button
-					className='w-96 py-2.5 px-5 text-center ml-5  my-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border hover:bg-gray-100 hover:text-sky-500 focus:shadow-cyan-500/50'
+					className='w-96 py-2.5 px-5 text-center mr-16 my-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border hover:bg-gray-100 hover:text-sky-500 focus:shadow-cyan-500/50'
 					onClick={handleEditorContent}
 				>
 					Save{' '}
 				</button>
+        </div>
       </div>
 		</>
 	);
