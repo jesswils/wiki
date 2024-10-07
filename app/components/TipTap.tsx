@@ -8,7 +8,6 @@ interface TiptapProps {
 }
 
 const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
-
 	const editor = useEditor({
 		extensions: [StarterKit],
     immediatelyRender: false,
