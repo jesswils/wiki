@@ -15,7 +15,7 @@ const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
 		editorProps: {
 			attributes: {
 				class:
-					'bg-white ml-1 my-3 border border-sky-500 rounded-md min-h-96 w-[40rem] size-fit focus:shadow-sky-200/50 focus:shadow-lg p-1 outline-none',
+					'bg-white ml-1 my-3 border border-sky-500 rounded-md min-h-96 w-[40rem] size-fit focus:shadow-sky-200/50 focus:shadow-lg p-3 outline-none',
 			},
 		},
 	});
@@ -115,6 +115,7 @@ const Tiptap = ({ onEditorContentSave }: TiptapProps) => {
         >
           Ordered list
         </button> */}
+        {/* these are commented out as I wasn't happy with the formatting */}
         <button
           onClick={() => editor.chain().focus().toggleCodeBlock().run()}
           className={editor.isActive('codeBlock') ? 'is-active' : ''}

@@ -12,4 +12,6 @@ const SaveNote = () => {
   )
 }
 
+// This is a placeholder component for when a user saves their note, it will be displayed as a button that they can click to view and edit their note in a seperate page.
+
 export default SaveNote
